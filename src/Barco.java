@@ -11,11 +11,14 @@ public class Barco implements Runnable {
         this.entra = entra;
     }
 
-    public void moverse (){
-        if(entra)
-            Puerta.entrar(id);
-        else
-            Puerta.salir(id);
+    public  void moverse (){
+        synchronized (Puerta.getInstance()) {
+           Puerta p = Puerta.getInstance() ;
+            if (entra)
+                p.entrar(id);
+            else
+                p.salir(id);
+        }
     }
 
     @Override

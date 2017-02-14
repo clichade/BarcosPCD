@@ -3,14 +3,26 @@
  */
 public class Puerta {
 
-    public static void entrar(int id){
+    private static Puerta instance = null;
+
+    private Puerta(){
+    }
+
+
+    public static Puerta getInstance(){
+        if(instance == null)
+            instance = new Puerta();
+        return  instance;
+    }
+
+    public void entrar(int id){
         System.out.println("El barco "+id+" va a entrar");
         System.out.println("El barco "+id+" va a entrar");
         System.out.println("El barco "+id+" va a entrar");
 
     }
 
-    public static void salir(int id){
+    public void salir(int id){
         System.out.println("El barco "+id+" va a salir");
         System.out.println("El barco "+id+" va a salir");
         System.out.println("El barco "+id+" va a salir");
