@@ -9,13 +9,15 @@ public class Main {
 
         ArrayList<Barco> listaBarcos = new ArrayList<>();
 
-        for (int i = 0; i < 30; i++) {
-            listaBarcos.add(new Barco(i, true));
+        boolean entrar = true;
+
+        for (int i = 0; i < 50; i++) {
+            if(i % 2 == 0) entrar = true;
+            else entrar = false;
+
+            listaBarcos.add(new Barco(i, entrar));
         }
 
-        for (int i = 30; i < 60; i++) {
-            listaBarcos.add(new Barco(i, false));
-        }
 
         for (int i=0;i<listaBarcos.size();i++){
             Thread t = new Thread(listaBarcos.get(i));
