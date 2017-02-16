@@ -39,11 +39,13 @@ public class TorreDeControl {
 
     public synchronized void finEntrada(){
         entrando --;
+        if(entrando == 0)
         notifyAll();
     }
     public synchronized void finSalida(){
 
         saliendo --;
+        if (saliendo == 0)
         notifyAll();
     }
 }
