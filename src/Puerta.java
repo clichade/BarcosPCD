@@ -2,12 +2,14 @@
  * Created by trjano on 14/02/17.
  */
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 /**
  * Implementamos un singleton porque solo habrá una puerta
  */
 public class Puerta {
-
-    private static Puerta instance = null;
+//--------------------SINGLETON---------------------
+    private static Puerta instance = new Puerta();
     TorreDeControl torre;
 
     private Puerta(){
@@ -16,8 +18,6 @@ public class Puerta {
 
 
     public static Puerta getInstance(){
-        if(instance == null)
-            instance = new Puerta();
         return  instance;
     }
 
@@ -30,6 +30,7 @@ public class Puerta {
         System.out.println("El barco "+id+" va a entrar");
         System.out.println("El barco "+id+" va a entrar");
         System.out.println("El barco "+id+" va a entrar");
+        System.out.println("El barco "+id+" finalizará  su entrada");
         torre.finEntrada();
 
     }
@@ -43,6 +44,7 @@ public class Puerta {
         System.out.println("El barco "+id+" va a salir");
         System.out.println("El barco "+id+" va a salir");
         System.out.println("El barco "+id+" va a salir");
+        System.out.println("El barco "+id+" finalizará  su salida");
         torre.finSalida();
 
     }

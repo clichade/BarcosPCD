@@ -5,10 +5,12 @@ public class TorreDeControl {
 
     private  int entrando;
     private  int saliendo;
+    boolean esperanSalir;
 
     public TorreDeControl(){
         entrando = 0;
         saliendo = 0;
+        esperanSalir = false;
     }
 
     /**
@@ -16,7 +18,7 @@ public class TorreDeControl {
      */
     public synchronized void permEntrada() {
     try {
-        while (saliendo > 0)
+        while (saliendo > 0 || esperanSalir)
             wait();
     }catch (InterruptedException e) {
     }
@@ -29,8 +31,10 @@ public class TorreDeControl {
      */
     public synchronized void permSalida(){
         try {
-            while (entrando > 0)
+            while (entrando > 0 ){
+                esperanSalir = true;
                 wait();
+            }
         }catch (InterruptedException e) {
         }
 
@@ -40,12 +44,14 @@ public class TorreDeControl {
     public synchronized void finEntrada(){
         entrando --;
         if(entrando == 0)
-        notifyAll();
+            notifyAll();
     }
     public synchronized void finSalida(){
 
         saliendo --;
-        if (saliendo == 0)
-        notifyAll();
+        if (saliendo == 0 ) {
+            esperanSalir = false;
+            notifyAll();
+        }
     }
 }
