@@ -1,49 +1,26 @@
-/**
- * Created by trjano on 14/02/17.
- */
 
-/**
- * Implementamos un singleton porque solo habr√° una puerta
- */
 public class Puerta {
+	TorreDeControl Torre;
 
-    private static Puerta instance = null;
-    TorreDeControl torre;
+	public Puerta() {
+		Torre = new TorreDeControl();
+	}
 
-    private Puerta(){
-        torre = new TorreDeControl();
-    }
+	public void enter(Barco b) {
+		Torre.permEntrada(b);
+		System.out.println("El barco " + b.id + " ha ENTRADO");
+		System.out.println("El barco " + b.id + " ha ENTRADO");
+		System.out.println("El barco " + b.id + " ha ENTRADO");
+		System.out.println("El barco " + b.id + " finalizar·  su entrada");
+		Torre.finEntrada();
+	}
 
-
-    public static Puerta getInstance(){
-        if(instance == null)
-            instance = new Puerta();
-        return  instance;
-    }
-
-    /**
-     * para entrar primero no debe haber nadie saliendo
-     * @param id
-     */
-    public void entrar(int id){
-        torre.permEntrada();
-        System.out.println("El barco "+id+" va a entrar");
-        System.out.println("El barco "+id+" va a entrar");
-        System.out.println("El barco "+id+" va a entrar");
-        torre.finEntrada();
-
-    }
-
-    /**
-     * para salir no debe haber nadie entrando
-     * @param id
-     */
-    public void salir(int id){
-        torre.permSalida();
-        System.out.println("El barco "+id+" va a salir");
-        System.out.println("El barco "+id+" va a salir");
-        System.out.println("El barco "+id+" va a salir");
-        torre.finSalida();
-
-    }
+	public void exit(Barco b) {
+		Torre.permSalida(b);
+		System.out.println("El barco " + b.id + " ha SALIDO");
+		System.out.println("El barco " + b.id + " ha SALIDO");
+		System.out.println("El barco " + b.id + " ha SALIDO");
+		System.out.println("El barco " + b.id + " finalizar·  su salida");
+		Torre.finSalida();
+	}
 }

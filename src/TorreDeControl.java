@@ -1,51 +1,55 @@
-/**
- * Created by trjano on 16/02/17.
- */
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TorreDeControl {
 
-    private  int entrando;
-    private  int saliendo;
+	private int entrando;
+	private int saliendo;
 
-    public TorreDeControl(){
-        entrando = 0;
-        saliendo = 0;
-    }
+	Queue<Barco> ColaEntrada = new LinkedList<>();
+	Queue<Barco> ColaSalida = new LinkedList<>();
 
-    /**
-     * para que entre un barco no puede haber ningun otro saliendo
-     */
-    public synchronized void permEntrada() {
-    try {
-        while (saliendo > 0)
-            wait();
-    }catch (InterruptedException e) {
-    }
+	public TorreDeControl() {
+		entrando = 0;
+		saliendo = 0;
+	}
 
-        entrando ++;
-    }
+	public synchronized void permEntrada(Barco b) {
+		ColaEntrada.add(b);
+		try {
+			while (saliendo > 0 || !ColaSalida.isEmpty()) {
+				wait();
+			}
+		} catch (InterruptedException e) {
 
-    /**
-     * para que salga un barco no debe haber ingun otro entrando
-     */
-    public synchronized void permSalida(){
-        try {
-            while (entrando > 0)
-                wait();
-        }catch (InterruptedException e) {
-        }
+		}
+		entrando++;
+		ColaEntrada.remove();
+	}
 
-        saliendo ++;
-    }
+	public synchronized void permSalida(Barco b) {
+		ColaSalida.add(b);
+		try {
+			while (entrando > 0) {
+				wait();
+			}
+		} catch (InterruptedException e) {
+		}
+		saliendo++;
+		ColaSalida.remove();
+	}
 
-    public synchronized void finEntrada(){
-        entrando --;
-        if(entrando == 0)
-        notifyAll();
-    }
-    public synchronized void finSalida(){
+	public synchronized void finEntrada() {
+		entrando--;
+		if (entrando == 0) {
+			notifyAll();
+		}
+	}
 
-        saliendo --;
-        if (saliendo == 0)
-        notifyAll();
-    }
+	public synchronized void finSalida() {
+		saliendo--;
+		if (saliendo == 0) {
+			notifyAll();
+		}
+	}
 }

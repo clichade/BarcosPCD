@@ -1,27 +1,19 @@
-/**
- * Created by trjano on 14/02/17.
- */
+
 public class Barco implements Runnable {
+	Puerta door;
+	int id;
+	boolean entra;
 
-    int id;
-    boolean entra;
+	public Barco(Puerta p, int ident, boolean entrada) {
+		door = p;
+		id = ident;
+		entra = entrada;
+	}
 
-    Barco(int id, boolean entra){
-        this.id = id;
-        this.entra = entra;
-    }
-
-    public  void moverse (){
-
-           Puerta p = Puerta.getInstance() ;
-            if (entra)
-                p.entrar(id);
-            else
-                p.salir(id);
-    }
-
-    @Override
-    public void run() {
-        moverse();
-    }
+	public void run() {
+		if (!entra) {
+			door.exit(this);
+		} else
+			door.enter(this);
+	}
 }
