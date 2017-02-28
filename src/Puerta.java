@@ -1,26 +1,26 @@
 
 public class Puerta {
-	TorreDeControl Torre;
+	TorreDeControl torre;
 
 	public Puerta() {
-		Torre = new TorreDeControl();
+		torre = new TorreDeControl();
 	}
 
 	public void enter(Barco b) {
-		Torre.permEntrada(b);
-		System.out.println("El barco " + b.id + " ha ENTRADO");
-		System.out.println("El barco " + b.id + " ha ENTRADO");
-		System.out.println("El barco " + b.id + " ha ENTRADO");
-		System.out.println("El barco " + b.id + " finalizará  su entrada");
-		Torre.finEntrada();
+		torre.permEntrada(b);
+		System.out.println(b.id + " ha ENTRADO");
+		System.out.println(b.id + " ha ENTRADO");
+		System.out.println(b.id + " ha ENTRADO");
+		System.out.println(b.id + " FIN_ENTRADA");
+		torre.finEntrada();
 	}
 
 	public void exit(Barco b) {
-		Torre.permSalida(b);
-		System.out.println("El barco " + b.id + " ha SALIDO");
-		System.out.println("El barco " + b.id + " ha SALIDO");
-		System.out.println("El barco " + b.id + " ha SALIDO");
-		System.out.println("El barco " + b.id + " finalizará  su salida");
-		Torre.finSalida();
+		torre.permSalida(b);
+		System.out.println(b.id + " ha SALIDO");
+		System.out.println(b.id + " ha SALIDO");
+		System.out.println(b.id + " ha SALIDO");
+		System.out.println(b.id + " FIN_SALIDA");
+		torre.finSalida();
 	}
 }
