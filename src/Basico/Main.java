@@ -4,14 +4,13 @@ import java.util.ArrayList;
 public class MainBarco {
 
 	public static void main(String[] args) {
-		Puerta pu = new Puerta();
 		List<Thread> ListaBarcos = new ArrayList<>();
 		boolean entrada = true;
 
 		for (int i = 0; i < 20; i++) {
 			int ident = i + 1;
 			entrada = !entrada;
-			Barco ship = new Barco(pu, ident, entrada);
+			Barco ship = new Barco(ident, entrada,false);
 			ListaBarcos.add(new Thread(ship));
 
 		}
