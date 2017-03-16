@@ -1,18 +1,22 @@
+package Basico;
 
 public class Barco implements Runnable {
+	/**
+	 * el código de identificación del barco
+	 */
 	int id;
-	private boolean entra;
-	private boolean petrolero;
 
-	public Barco(int ident, boolean entrada, boolean es_petrolero) {
+	/**
+	 * true si es de entrada, false si es de salida
+	 */
+	private boolean entra;
+
+
+	public Barco(int ident, boolean entrada) {
 		id = ident;
 		entra = entrada;
-		petrolero = es_petrolero;
 	}
 
-	public boolean isPetrolero() {
-		return petrolero;
-	}
 
 	public void run() {
 		if (!entra) {

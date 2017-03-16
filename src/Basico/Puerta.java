@@ -1,3 +1,7 @@
+package Basico;
+
+import DescargaContenedores.Plataforma;
+import SistemaDeCarga.Zona_De_Carga;
 
 public class Puerta {
 
@@ -5,10 +9,13 @@ public class Puerta {
 	private static Puerta instance = null;
 	TorreDeControl torre;
 	Zona_De_Carga zonaDeCarga;
+	Plataforma plataforma;
 
 	private Puerta() {
 		torre = new TorreDeControl();
 		zonaDeCarga = new Zona_De_Carga();
+		plataforma = new Plataforma();
+
 	}
 
 	//síngleton por 2 check que comprueba y luego una vez mas para instanciar son syncronized
@@ -35,8 +42,11 @@ public class Puerta {
 		System.out.println(b.id + " ha ENTRADO");
 		System.out.println(b.id + " FIN_ENTRADA");
 		torre.finEntrada();
-		if (b.isPetrolero())
-			zonaDeCarga.encallar(b);
+		if (Petrolero.class.isInstance(b)) {
+			zonaDeCarga.encallar();
+		}else if (Mercante.class.isInstance(b)){
+			plataforma.encallar();
+		}
 	}
 
 	public void exit(Barco b) {
