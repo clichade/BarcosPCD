@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="398b340b-0c96-4770-ae44-1c37dbd5e4ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/Basico/Main.class" afterPath="$PROJECT_DIR$/out/production/Puerto/Basico/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/Basico/Puerta.class" afterPath="$PROJECT_DIR$/out/production/Puerto/Basico/Puerta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/Basico/TorreDeControl.class" afterPath="$PROJECT_DIR$/out/production/Puerto/Basico/TorreDeControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Agua.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Agua.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Gasolina.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Gasolina.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Reponedor.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Reponedor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Basico/Main.java" afterPath="$PROJECT_DIR$/src/Basico/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Basico/Puerta.java" afterPath="$PROJECT_DIR$/src/Basico/Puerta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Basico/TorreDeControl.java" afterPath="$PROJECT_DIR$/src/Basico/TorreDeControl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" afterPath="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" afterPath="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Basico/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+            <state relative-caret-position="198">
+              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,7 +55,7 @@
       <file leaf-file-name="Petrolero.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Basico/Petrolero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="126">
               <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
                 <element signature="e#147#148#0" expanded="true" />
@@ -90,8 +81,8 @@
       <file leaf-file-name="Puerta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+            <state relative-caret-position="234">
+              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -102,7 +93,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1458">
               <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Zona_De_Carga.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Zona_De_Carga.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="38" />
+            <state relative-caret-position="162">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,8 +128,8 @@
       <file leaf-file-name="Plataforma.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="576">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,14 +170,14 @@
         <option value="$PROJECT_DIR$/src/SistemaDeCarga/Tanque_gasofa.java" />
         <option value="$PROJECT_DIR$/src/SistemaDeCarga/Tanque_agua.java" />
         <option value="$PROJECT_DIR$/src/DescargaContenedores/Contenedor.java" />
-        <option value="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" />
         <option value="$PROJECT_DIR$/src/Basico/TorreDeControl.java" />
         <option value="$PROJECT_DIR$/src/Basico/Mercante.java" />
         <option value="$PROJECT_DIR$/src/Basico/Petrolero.java" />
         <option value="$PROJECT_DIR$/src/Basico/Barco.java" />
-        <option value="$PROJECT_DIR$/src/Basico/Main.java" />
-        <option value="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
         <option value="$PROJECT_DIR$/src/Basico/Puerta.java" />
+        <option value="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
+        <option value="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" />
+        <option value="$PROJECT_DIR$/src/Basico/Main.java" />
       </list>
     </option>
   </component>
@@ -768,12 +761,12 @@
       <workItem from="1489657717522" duration="1731000" />
       <workItem from="1490611073505" duration="4576000" />
       <workItem from="1490848067127" duration="7000" />
-      <workItem from="1490944145282" duration="618000" />
+      <workItem from="1490944145282" duration="8402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50024000" />
+    <option name="totallyTimeSpent" value="57808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -837,7 +830,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -900,7 +895,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -964,7 +961,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,7 +1019,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,7 +1077,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,7 +1113,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1128,7 +1133,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1458">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2664">
+          <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Tanque_gasofa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1145,12 +1191,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Basico/Petrolero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="126">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="e#147#148#0" expanded="true" />
             <element signature="e#184#185#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,55 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Basico/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Thread.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2664">
-          <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Tanque_gasofa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="38" />
+        <state relative-caret-position="198">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

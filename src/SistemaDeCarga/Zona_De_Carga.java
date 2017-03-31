@@ -54,6 +54,9 @@ public class Zona_De_Carga {
     private int n_repost_g = 0;
 
 
+    boolean started = false;
+
+
     CyclicBarrier barrier = new CyclicBarrier(5);
 
     /**
@@ -72,13 +75,20 @@ public class Zona_De_Carga {
      * ,etodo que crea los theads de gasolina y de agua a medida que van llegando los barcos, solo puede
      * añadirse uno a la vez y en el momento que son 5 se empieza a procesar
      */
-    public synchronized void encallar() {
-        int pos = threadsGasolina.size();
-        threadsGasolina.add(new Thread_Gasolina(pos));
-        threadsAgua.add(new Thread_Agua(pos));
+    public  void encallar() {
+        synchronized (this) {
+            int pos = threadsGasolina.size();
+            threadsGasolina.add(new Thread_Gasolina(pos));
+            threadsAgua.add(new Thread_Agua(pos));
+        }
+        try { barrier.await();} catch (InterruptedException e) {e.printStackTrace();} catch (BrokenBarrierException e) {e.printStackTrace();}
 
-        if(threadsGasolina.size()== 5)
-        procesar();
+        synchronized (this) {
+            if(!started) {
+                procesar();
+                started = true;
+            }
+        }
 
 
     }
@@ -180,9 +190,9 @@ public class Zona_De_Carga {
                 mutex.release();//liberamos el semáforo de variables compartidas
 
                 if (listaTanques[pos].descargar()) {
-                    //System.out.println("Tanque "+pos+" "+listaTanques[pos].getLitros());
+                    System.out.println("Tanque "+pos+" "+listaTanques[pos].getLitros());
                     gasolina += 250;
-                   // System.out.println("Petrolero "+pos+": "+gasolina);
+                    System.out.println("Petrolero "+pos+": "+gasolina);
                 }
                 mutex.acquire();//lo admquirimos para restar y comprobar
                 n_repost_g--; //disminuimos el úmero de barcos repostando
@@ -223,7 +233,7 @@ public class Zona_De_Carga {
                 while (litros < 5000){
                     tanqueAgua.acquire();
                     litros += 1000;
-                    System.out.println("tanqueAgua "+pos+": " + litros);
+                   // System.out.println("tanqueAgua "+pos+": " + litros);
                     tanqueAgua.release();
                  /* esto se activa en el caso de que queramos ver que funciona realmente
                     try {

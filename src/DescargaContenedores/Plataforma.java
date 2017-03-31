@@ -1,6 +1,8 @@
 package DescargaContenedores;
 
 import java.util.LinkedList;
+import java.util.Random;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -20,11 +22,10 @@ public class Plataforma {
     /**
      * Inicio de la definicion de condiciones y de lock
      */
-    Lock monitor = new ReentrantLock();
-    Condition barco = monitor.newCondition();
-    Condition cogerSal = monitor.newCondition();
-    Condition cogerHarina = monitor.newCondition();
-    Condition cogerAzucar = monitor.newCondition();
+
+    SynchronousQueue<Contenedor> qSal = new SynchronousQueue();
+    SynchronousQueue<Contenedor> qAzucar = new SynchronousQueue<>();
+    SynchronousQueue<Contenedor> qHarina = new SynchronousQueue<>();
     /**
      * Fin de la definición de condiciones y el lock
      */
@@ -74,6 +75,7 @@ public class Plataforma {
     private class GruaBarco extends Thread {
 
         LinkedList<Contenedor> listaCont;
+        Random random = new Random();
 
         /**
          * inicializa la lsita de contenedores
@@ -90,36 +92,34 @@ public class Plataforma {
         }
 
         public void descargar() {
-            monitor.lock();
-            while (base != Contenedor.VACIO) {
-                try {
-                    barco.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            base = listaCont.removeFirst();//eliminamos el primero y lo pasamos a la base
+
+            base = listaCont.remove(random.nextInt(listaCont.size()));//eliminamos el primero y lo pasamos a la base
             //dependiendo del contenido de la base ahora llama a una grua o a otra
-            System.out.println("El barco ha soltado " + base);
+            //System.out.println("El barco ha soltado " + base);
 
             switch (base) {
                 case AZUCAR:
-                    cogerAzucar.signal();
-                    System.out.println("El barco ha avisado a grua " + base);
+                    try {
+                        System.out.println("El barco ha avisado a grua " + base);
+                        qAzucar.put(base);} catch (InterruptedException e) {e.printStackTrace();}
+
                     break;
                 case HARINA:
-                    cogerHarina.signal();
                     System.out.println("El barco ha avisado a grua " + base);
+                    try {qHarina.put(base);} catch (InterruptedException e) {e.printStackTrace();}
+
                     break;
                 case SAL:
-                    cogerSal.signal();
-                    System.out.println("El barco ha avisado a grua " + base);
+                    try {
+                        System.out.println("El barco ha avisado a grua " + base);
+                        qSal.put(base);} catch (InterruptedException e) {e.printStackTrace();
+                    }
                     break;
 
                 default:
                     System.out.println("Error de algun tipo en el barco");
             }
-            monitor.unlock();
+
 
         }
 
@@ -136,7 +136,7 @@ public class Plataforma {
      */
     private class Grua extends Thread {
         Contenedor tipo;
-        Condition condGrua;
+        SynchronousQueue queue;
         int n;
 
         public Grua(Contenedor cont) {
@@ -144,42 +144,27 @@ public class Plataforma {
             switch (cont) {
                 case SAL:
                     tipo = Contenedor.SAL;
-                    condGrua = cogerSal;
+                    queue = qSal;
                     n = 20;
                     break;
                 case HARINA:
                     tipo = Contenedor.HARINA;
-                    condGrua = cogerHarina;
+                    queue = qHarina;
                     n = 5;
                     break;
                 case AZUCAR:
                     tipo = Contenedor.AZUCAR;
-                    condGrua = cogerAzucar;
+                    queue = qAzucar;
                     n = 12;
             }
         }
 
         private void coger() {
-            monitor.lock();
 
-            while (base == Contenedor.VACIO) {
-                try {
-                    System.out.println("La grua " + tipo + " PRETENDE");
-                    condGrua.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-
-            //cogemos el contenedor y ponemos la base a vacio
-            if (base == tipo) {
-                base = Contenedor.VACIO;
-                n--;
-                System.out.println("La grua " + tipo + " COGIÓ");
-                barco.signal();
-            }
-            monitor.unlock();
+            System.out.println("La grua " + tipo + " PRETENDE");
+            try {queue.take();} catch (InterruptedException e) {e.printStackTrace();}
+            n--;
+            System.out.println("La grua " + tipo + " COGIÓ");
         }
 
         @Override

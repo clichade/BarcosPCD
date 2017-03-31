@@ -4,14 +4,18 @@ import Basico.Barco;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class Main {
 
+	//Executor en el main para ir lanzando los barcos como tasks
 	public static void main(String[] args) {
 		List<Thread> ListaBarcos = new ArrayList<>();
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
 		boolean entrada = true;
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 20; i++) {
 			int ident = i + 1;
 			entrada = !entrada;
 			Barco ship = new Barco(ident, entrada);
@@ -31,15 +35,8 @@ public class Main {
 
 
 		for (int i = 0; i < ListaBarcos.size(); i++) {
-			ListaBarcos.get(i).start();
+			executor.execute(ListaBarcos.get(i));
 		}
 
-		try {
-			for (int i = 0; i < ListaBarcos.size(); i++) {
-				ListaBarcos.get(i).join();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }
