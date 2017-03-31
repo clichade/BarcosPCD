@@ -11,7 +11,7 @@ public class Main {
 		List<Thread> ListaBarcos = new ArrayList<>();
 		boolean entrada = true;
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 4; i++) {
 			int ident = i + 1;
 			entrada = !entrada;
 			Barco ship = new Barco(ident, entrada);
@@ -35,11 +35,11 @@ public class Main {
 		}
 
 		try {
-			for (int i = 0; i < ListaBarcos.size(); i++)
+			for (int i = 0; i < ListaBarcos.size(); i++) {
 				ListaBarcos.get(i).join();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 }

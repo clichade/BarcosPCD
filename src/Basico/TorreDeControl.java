@@ -80,6 +80,8 @@ public class TorreDeControl {
 		if (entrando == 0 ) {
 			notifyAll();
 		}
+		System.out.println("eoooo");
+
 	}
 
 	public synchronized void finSalida() {
@@ -87,5 +89,6 @@ public class TorreDeControl {
 		if (saliendo == 0) {
 			notifyAll();
 		}
+		System.out.println("eoooo");
 	}
 }

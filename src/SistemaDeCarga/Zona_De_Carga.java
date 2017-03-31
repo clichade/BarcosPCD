@@ -3,6 +3,8 @@ package SistemaDeCarga;
 import Basico.Barco;
 
 import java.util.LinkedList;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -51,6 +53,9 @@ public class Zona_De_Carga {
      */
     private int n_repost_g = 0;
 
+
+    CyclicBarrier barrier = new CyclicBarrier(5);
+
     /**
      * constructor por defecto, instanciamos nuestras estructuras de datos
      */
@@ -66,16 +71,16 @@ public class Zona_De_Carga {
     /**
      * ,etodo que crea los theads de gasolina y de agua a medida que van llegando los barcos, solo puede
      * añadirse uno a la vez y en el momento que son 5 se empieza a procesar
-     * @param petrolero
      */
     public synchronized void encallar() {
         int pos = threadsGasolina.size();
         threadsGasolina.add(new Thread_Gasolina(pos));
         threadsAgua.add(new Thread_Agua(pos));
 
-        if (threadsAgua.size() == 5) {
-            procesar();
-        }
+        if(threadsGasolina.size()== 5)
+        procesar();
+
+
     }
 
     /**

@@ -3,6 +3,8 @@ package Basico;
 import DescargaContenedores.Plataforma;
 import SistemaDeCarga.Zona_De_Carga;
 
+import java.util.concurrent.BrokenBarrierException;
+
 public class Puerta {
 
 
@@ -35,7 +37,7 @@ public class Puerta {
 	 * los petroleros empiezan con su proceso de zona de carga una vez HAN ACABAO EL FIN ENTRADA
 	 * @param b
 	 */
-	public void enter(Barco b) {
+	public void enter(Barco b)  {
 		torre.permEntrada(b);
 		System.out.println(b.id + " ha ENTRADO");
 		System.out.println(b.id + " ha ENTRADO");
@@ -43,7 +45,7 @@ public class Puerta {
 		System.out.println(b.id + " FIN_ENTRADA");
 		torre.finEntrada();
 		if (Petrolero.class.isInstance(b)) {
-			zonaDeCarga.encallar();
+				zonaDeCarga.encallar();
 		}else if (Mercante.class.isInstance(b)){
 			plataforma.encallar();
 		}
