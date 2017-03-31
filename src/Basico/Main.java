@@ -9,34 +9,35 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class Main {
 
-	//Executor en el main para ir lanzando los barcos como tasks
+
 	public static void main(String[] args) {
-		List<Thread> ListaBarcos = new ArrayList<>();
-		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(26);
+		List<Barco> listaBarcos = new ArrayList<>();
 		boolean entrada = true;
 
-		for (int i = 0; i < 20; i++) {
-			int ident = i + 1;
+		for (int i = 0; i < 4; i++) {
 			entrada = !entrada;
-			Barco ship = new Barco(ident, entrada);
-			ListaBarcos.add(new Thread(ship));
+			Barco ship = new Barco(i, entrada);
+			listaBarcos.add(ship);
 
 		}
 
 		for (int i = 20; i < 25; i++) {
 			int ident = i + 1;
 			Barco ship = new Petrolero(ident, true);
-			ListaBarcos.add(new Thread(ship));
+			listaBarcos.add(ship);
 
 		}
 
 		Barco ship = new Mercante(25,true);
-		ListaBarcos.add(new Thread(ship));
+		listaBarcos.add(ship);
 
 
-		for (int i = 0; i < ListaBarcos.size(); i++) {
-			executor.execute(ListaBarcos.get(i));
+		for (int i = 0; i < listaBarcos.size(); i++) {
+			executor.execute(listaBarcos.get(i));
 		}
+
+		executor.shutdown();
 
 	}
 }

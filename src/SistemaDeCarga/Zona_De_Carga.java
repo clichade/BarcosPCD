@@ -100,7 +100,6 @@ public class Zona_De_Carga {
         for (int i=0; i< threadsGasolina.size();i++) {
             threadsAgua.get(i).start();
             threadsGasolina.get(i).start();
-
         }
         new Thread_Reponedor().start();
     }

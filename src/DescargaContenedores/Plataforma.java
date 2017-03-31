@@ -100,19 +100,22 @@ public class Plataforma {
             switch (base) {
                 case AZUCAR:
                     try {
-                        System.out.println("El barco ha avisado a grua " + base);
+
                         qAzucar.put(base);} catch (InterruptedException e) {e.printStackTrace();}
+                    System.out.println("El barco ha avisado a grua " + base);
 
                     break;
                 case HARINA:
-                    System.out.println("El barco ha avisado a grua " + base);
+
                     try {qHarina.put(base);} catch (InterruptedException e) {e.printStackTrace();}
+                    System.out.println("El barco ha avisado a grua " + base);
 
                     break;
                 case SAL:
                     try {
-                        System.out.println("El barco ha avisado a grua " + base);
+
                         qSal.put(base);} catch (InterruptedException e) {e.printStackTrace();
+                        System.out.println("El barco ha avisado a grua " + base);
                     }
                     break;
 

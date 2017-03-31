@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="398b340b-0c96-4770-ae44-1c37dbd5e4ed" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/Basico/Main.class" afterPath="$PROJECT_DIR$/out/production/Puerto/Basico/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/DescargaContenedores/Plataforma$Grua.class" afterPath="$PROJECT_DIR$/out/production/Puerto/DescargaContenedores/Plataforma$Grua.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/DescargaContenedores/Plataforma$GruaBarco.class" afterPath="$PROJECT_DIR$/out/production/Puerto/DescargaContenedores/Plataforma$GruaBarco.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Agua.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Agua.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Gasolina.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Gasolina.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Reponedor.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga$Thread_Reponedor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga.class" afterPath="$PROJECT_DIR$/out/production/Puerto/SistemaDeCarga/Zona_De_Carga.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Basico/Main.java" afterPath="$PROJECT_DIR$/src/Basico/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" afterPath="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" afterPath="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
@@ -33,8 +41,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Basico/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+            <state relative-caret-position="294">
+              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,8 +89,8 @@
       <file leaf-file-name="Puerta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+            <state relative-caret-position="666">
+              <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -116,8 +124,8 @@
       <file leaf-file-name="Zona_De_Carga.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="1511">
+              <caret line="200" column="13" lean-forward="true" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,8 +136,8 @@
       <file leaf-file-name="Plataforma.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="349">
+              <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,9 +182,9 @@
         <option value="$PROJECT_DIR$/src/Basico/Mercante.java" />
         <option value="$PROJECT_DIR$/src/Basico/Petrolero.java" />
         <option value="$PROJECT_DIR$/src/Basico/Barco.java" />
-        <option value="$PROJECT_DIR$/src/Basico/Puerta.java" />
-        <option value="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
         <option value="$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java" />
+        <option value="$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java" />
+        <option value="$PROJECT_DIR$/src/Basico/Puerta.java" />
         <option value="$PROJECT_DIR$/src/Basico/Main.java" />
       </list>
     </option>
@@ -761,12 +769,12 @@
       <workItem from="1489657717522" duration="1731000" />
       <workItem from="1490611073505" duration="4576000" />
       <workItem from="1490848067127" duration="7000" />
-      <workItem from="1490944145282" duration="8402000" />
+      <workItem from="1490944145282" duration="10683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57808000" />
+    <option name="totallyTimeSpent" value="60089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -781,13 +789,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8684604" sideWeight="0.12528823" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8684604" sideWeight="0.87471175" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8684604" sideWeight="0.87471175" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24365872" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19984627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1147,37 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Tanque_gasofa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Basico/Mercante.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1200,14 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Basico/Barco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1216,10 +1185,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DescargaContenedores/Plataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Tanque_gasofa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaDeCarga/Zona_De_Carga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1511">
+          <caret line="200" column="13" lean-forward="true" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Basico/Puerta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Basico/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        <state relative-caret-position="294">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
