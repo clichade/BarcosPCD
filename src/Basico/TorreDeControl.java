@@ -1,21 +1,21 @@
 package Basico;
 
 import Basico.Barco;
+import RMI.Contador;
 import RMI.IContador;
 
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.LinkedList;
 
 public class TorreDeControl {
 
 	private int entrando;
 	private int saliendo;
-	
-	IContador contador;
 
+	Contador contador = new Contador();
 
 	/**
 	 * la cola de ESPERA de los barcos de entrada
@@ -30,58 +30,59 @@ public class TorreDeControl {
 	public TorreDeControl() {
 		entrando = 0;
 		saliendo = 0;
-		
+
+		String identificador = "localhost";
+
 		try {
-			Registry registry = LocateRegistry.getRegistry("localhost");
-			contador = (IContador) registry.lookup("contador");
-			
-			
+			IContador stub = (IContador) UnicastRemoteObject.exportObject(
+					contador, 0);
+
+			Registry registry = LocateRegistry.getRegistry();
+
+			registry.rebind(identificador, stub);
+
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (NotBoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-		
 	}
 
-
 	/**
-	 * método que hace que un barco pida permiso de entrada, un barco solo puede entrar si se cumple que:
-	 * NO HAY NINGÚN BARCO SALIENDO
-	 * NO HAY NINGÚN BARCO ESPERANDO PARA SALIR
-	 * EL ES EL PRIMERO EN LA LISTA DE ESPERA DE LOS BARCOS DE ENTRADA
-	 * en ese caso entra y se elimina de la lista de espera
+	 * método que hace que un barco pida permiso de entrada, un barco solo puede
+	 * entrar si se cumple que: NO HAY NINGÚN BARCO SALIENDO NO HAY NINGÚN BARCO
+	 * ESPERANDO PARA SALIR EL ES EL PRIMERO EN LA LISTA DE ESPERA DE LOS BARCOS
+	 * DE ENTRADA en ese caso entra y se elimina de la lista de espera
+	 * 
 	 * @param b
-	 * @throws RemoteException 
+	 * @throws RemoteException
 	 */
 	public synchronized void permEntrada(Barco b) throws RemoteException {
 		System.out.println(b.id + " Solicita entrar");
 		colaEntrada.add(b);
 		contador.incBEntrar();
 		try {
-			while (saliendo > 0 || !colaSalida.isEmpty() || !colaEntrada.getFirst().equals(b)) {
+			while (saliendo > 0 || !colaSalida.isEmpty()
+					|| !colaEntrada.getFirst().equals(b)) {
 				wait();
 			}
 		} catch (InterruptedException e) {
 
 		}
-		
-		contador.decBEntrar();
+
 		entrando++;
 		colaEntrada.removeFirst();
 	}
 
 	/**
-	 * método que hace que un barco pida permiso de salida, un barco solo puede entrar si se cumple que:
-	 * NO HAY NINGÚN BARCO ENTRANDO
-	 * EL ES EL PRIMERO EN LA LISTA DE ESPERA DE LOS BARCOS DE SALIDA
-	 * en ese caso entra y se elimina de la lista de espera
-	 * con esto dejamos claro que los barcos de salida tienen prioridad ya que no necesitan
-	 * saber si hay un barco esperando a salir
+	 * método que hace que un barco pida permiso de salida, un barco solo puede
+	 * entrar si se cumple que: NO HAY NINGÚN BARCO ENTRANDO EL ES EL PRIMERO EN
+	 * LA LISTA DE ESPERA DE LOS BARCOS DE SALIDA en ese caso entra y se elimina
+	 * de la lista de espera con esto dejamos claro que los barcos de salida
+	 * tienen prioridad ya que no necesitan saber si hay un barco esperando a
+	 * salir
+	 * 
 	 * @param b
-	 * @throws RemoteException 
+	 * @throws RemoteException
 	 */
 	public synchronized void permSalida(Barco b) throws RemoteException {
 		System.out.println(b.id + " Solicita salir");
@@ -93,22 +94,19 @@ public class TorreDeControl {
 			}
 		} catch (InterruptedException e) {
 		}
-		contador.decBSalir();
 		saliendo++;
 		colaSalida.removeFirst();
 	}
 
-
-
 	/**
-	 * si ha acabado de entrar se notifica y si no hay nadie entrando se les notifica a los de salida
+	 * si ha acabado de entrar se notifica y si no hay nadie entrando se les
+	 * notifica a los de salida
 	 */
 	public synchronized void finEntrada() {
 		entrando--;
-		if (entrando == 0 ) {
+		if (entrando == 0) {
 			notifyAll();
 		}
-	
 
 	}
 
@@ -117,6 +115,6 @@ public class TorreDeControl {
 		if (saliendo == 0) {
 			notifyAll();
 		}
-		
+
 	}
 }

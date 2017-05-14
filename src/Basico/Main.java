@@ -1,17 +1,16 @@
 package Basico;
 
-import Basico.Barco;
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class Main {
 
-
 	public static void main(String[] args) {
-		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors
+				.newFixedThreadPool(10);
 		List<Barco> listaBarcos = new ArrayList<>();
 		boolean entrada = true;
 
@@ -29,9 +28,8 @@ public class Main {
 
 		}
 
-		Barco ship = new Mercante(25,true);
+		Barco ship = new Mercante(25, true);
 		listaBarcos.add(ship);
-
 
 		for (int i = 0; i < listaBarcos.size(); i++) {
 			executor.execute(listaBarcos.get(i));

@@ -3,44 +3,86 @@ package RMI;
 import java.rmi.RemoteException;
 
 public class Contador implements IContador {
-	
-	
-	private  int barcosE = 0;
-	
-	private  int barcosS = 0;
-	
-	private static Ventana v = new Ventana("Control de Barcos");
-	
+
+	int barcosE;
+	int barcosS;
+	int azucar;
+	int harina;
+	int sal;
+	private static Contador x;
+
 	public Contador() {
-		v.addText("Control de tráfico de barcos");
+		barcosE = 0;
+		barcosS = 0;
+		azucar = 0;
+		harina = 0;
+		sal = 0;
+		x = this;
 	}
 
 	@Override
 	public void incBEntrar() {
 		barcosE++;
-		v.addText("\n Barcos esperando a entrar "+ barcosE);
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void incBSalir() {
 		barcosS++;
-		v.addText("\n Barcos esperando a salir "+ barcosS);
+
+	}
+
+	@Override
+	public void incSal() throws RemoteException {
 		// TODO Auto-generated method stub
-		
+		sal++;
 	}
 
 	@Override
-	public void decBEntrar() throws RemoteException {
-		barcosE--;
-		
+	public void incHarina() throws RemoteException {
+		// TODO Auto-generated method stub
+		harina++;
 	}
 
 	@Override
-	public void decBSalir() throws RemoteException {
-		barcosS--;
-		
+	public void incAzucar() throws RemoteException {
+		// TODO Auto-generated method stub
+		azucar++;
+	}
+
+	@Override
+	public int getEntr() throws RemoteException {
+		// TODO Auto-generated method stub
+		return barcosE;
+	}
+
+	@Override
+	public int getSali() throws RemoteException {
+		// TODO Auto-generated method stub
+		return barcosS;
+	}
+
+	@Override
+	public int getAzu() throws RemoteException {
+		// TODO Auto-generated method stub
+		return azucar;
+	}
+
+	@Override
+	public int getHari() throws RemoteException {
+		// TODO Auto-generated method stub
+		return harina;
+	}
+
+	@Override
+	public int getSal() throws RemoteException {
+		// TODO Auto-generated method stub
+		return sal;
+	}
+
+	public static Contador getInstance() {
+		return x;
 	}
 
 }
