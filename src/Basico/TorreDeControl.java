@@ -15,7 +15,7 @@ public class TorreDeControl {
 	private int entrando;
 	private int saliendo;
 
-	Contador contador = new Contador();
+	Contador contador;
 
 	/**
 	 * la cola de ESPERA de los barcos de entrada
@@ -30,6 +30,8 @@ public class TorreDeControl {
 	public TorreDeControl() {
 		entrando = 0;
 		saliendo = 0;
+		Contador.generateInstance();
+		contador = Contador.getInstance();
 
 		String identificador = "localhost";
 

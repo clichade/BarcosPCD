@@ -17,7 +17,10 @@ public class Contador implements IContador {
 		azucar = 0;
 		harina = 0;
 		sal = 0;
-		x = this;
+	}
+
+	public static void generateInstance() {
+		x = new Contador();
 	}
 
 	@Override

@@ -15,8 +15,6 @@ public class Client {
 					.println("java Client <host_servidor> <nombre_objeto_servidor>");
 		} else {
 			try {
-				Scanner x = new Scanner(System.in);
-				int v;
 				Registry registry = LocateRegistry.getRegistry(args[0]);
 				IContador stub = (IContador) registry.lookup(args[1]);
 				barcos.addText("\n*************Barcos entrantes/salientes*************");
@@ -28,9 +26,11 @@ public class Client {
 				cont.addText("Contenedores de Sal:" + stub.getSal());
 				cont.addText("Contenedores de Harina:" + stub.getHari());
 
-				
-				//En caso de quererlo por consola y con un option select que te permita elegir
-				
+				// En caso de quererlo por consola y con un option select que te
+				// permita elegir
+				// Scanner x = new Scanner(System.in);
+				// int v;
+
 				// System.out.println("¿Qué quieres ver?:");
 				// System.out.println("1 - Barcos que han entrado y salido.");
 				// System.out.println("2 - Contenedores de cada tipo.");
