@@ -28,6 +28,9 @@ public class Client {
 				cont.addText("Contenedores de Sal:" + stub.getSal());
 				cont.addText("Contenedores de Harina:" + stub.getHari());
 
+				
+				//En caso de quererlo por consola y con un option select que te permita elegir
+				
 				// System.out.println("¿Qué quieres ver?:");
 				// System.out.println("1 - Barcos que han entrado y salido.");
 				// System.out.println("2 - Contenedores de cada tipo.");
